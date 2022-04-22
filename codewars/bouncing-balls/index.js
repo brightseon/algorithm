@@ -1,18 +1,18 @@
 function bouncingBall(h, bounce, window) {
-    if (0 > bounce || bounce >= 1 || h < 0 || h < window) return -1;
+    let count = -1;
+    if (0 > bounce || bounce >= 1 || h < 0 || h < window) return count;
 
-    let count = 0,
-        height = h;
+    let height = h;
     while (height > window) {
-        ++count;
-        height = height * bounce;
-        ++count;
+        height *= bounce;
+        count += 2;
     }
 
-    return count - 1;
+    return count;
 }
 
 // -------------------------------------------------------------------
+
 // function bouncingBall(h,  bounce,  window) {
 //     if( h <= 0 || bounce >= 1 || bounce <= 0 || window >= h) return -1;
 //     let seen = 0;
