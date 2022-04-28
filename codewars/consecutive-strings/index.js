@@ -2,15 +2,12 @@ function longestConsec(strarr, k) {
     // your code
     if (strarr.length === 0 || k < 1 || strarr.length < k) return '';
 
-    return strarr
-        .reduce((a, _, i) => {
-            if (i + k > strarr.length) return a;
-            return [...a, strarr.slice(i, i + k).join('')];
-        }, [])
-        .reduce((a, b) => {
-            if (a.length >= b.length) return a;
-            return b;
-        }, '');
+    return strarr.reduce((a, _, i) => {
+        const str = strarr.slice(i, i + k).join('');
+        if (a.length >= str.length) return a;
+
+        return str;
+    }, '');
 }
 
 console.log(longestConsec(['tree', 'foling', 'trashy', 'blue', 'abcdef', 'uvwxyz'], 2));
