@@ -1,6 +1,5 @@
 function rowSumOddNumbers(n) {
-    const start = Math.pow(n, 2) - n + 1;
-    return Math.pow(n, 2) + (start - 1) * n;
+    return Math.pow(n, 3);
 }
 
 console.log(rowSumOddNumbers(1));
