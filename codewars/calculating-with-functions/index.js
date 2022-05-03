@@ -1,43 +1,17 @@
-function zero(...args) {
-    if (args.length > 0) return args[0](0);
-    return 0;
+function compose(num) {
+    return (op) => (op ? op(num) : num);
 }
-function one(...args) {
-    if (args.length > 0) return args[0](1);
-    return 1;
-}
-function two(...args) {
-    if (args.length > 0) return args[0](2);
-    return 2;
-}
-function three(...args) {
-    if (args.length > 0) return args[0](3);
-    return 3;
-}
-function four(...args) {
-    if (args.length > 0) return args[0](4);
-    return 4;
-}
-function five(...args) {
-    if (args.length > 0) return args[0](5);
-    return 5;
-}
-function six(...args) {
-    if (args.length > 0) return args[0](6);
-    return 6;
-}
-function seven(...args) {
-    if (args.length > 0) return args[0](7);
-    return 7;
-}
-function eight(...args) {
-    if (args.length > 0) return args[0](8);
-    return 8;
-}
-function nine(...args) {
-    if (args.length > 0) return args[0](9);
-    return 9;
-}
+
+const zero = compose(0);
+const one = compose(1);
+const two = compose(2);
+const three = compose(3);
+const four = compose(4);
+const five = compose(5);
+const six = compose(6);
+const seven = compose(7);
+const eight = compose(8);
+const nine = compose(9);
 
 function plus(b) {
     return (a) => a + b;
